@@ -3,6 +3,7 @@
 namespace LaPress\Commands;
 
 use Illuminate\Support\ServiceProvider;
+use LaPress\Commands\Console\Commands\ThemeLinkCommand;
 
 class CommandsServiceProvider extends ServiceProvider
 {
@@ -23,6 +24,8 @@ class CommandsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->commands([
+            ThemeLinkCommand::class
+        ]);
     }
 }
