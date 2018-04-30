@@ -1,0 +1,23 @@
+{
+    "name": "lapress/commands",
+    "authors": [
+        {
+            "name": "seszcze",
+            "email": "sebastian@ably.pl"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "LaPress\\Commands\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LaPress\\Commands\\CommandsServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev"
+}
