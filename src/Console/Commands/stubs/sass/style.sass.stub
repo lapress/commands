@@ -1,0 +1,10 @@
+@import "~normalize.css/normalize.css"
+@import "~suitcss-base/lib/base.css"
+
+@tailwind preflight
+@tailwind components
+@tailwind utilities
+
+@import "base/index"
+@import "layout/index"
+@import "components/index"

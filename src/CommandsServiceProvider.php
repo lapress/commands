@@ -3,19 +3,14 @@
 namespace LaPress\Commands;
 
 use Illuminate\Support\ServiceProvider;
-use LaPress\Commands\Console\Commands\ThemeLinkCommand;
+use LaPress\Commands\Console\Commands;
 
+/**
+ * @author Sebastian Szczepański
+ * @copyright Ably
+ */
 class CommandsServiceProvider extends ServiceProvider
 {
-    /**
-     * Bootstrap services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        //
-    }
 
     /**
      * Register services.
@@ -25,7 +20,10 @@ class CommandsServiceProvider extends ServiceProvider
     public function register()
     {
         $this->commands([
-            ThemeLinkCommand::class
+            Commands\ThemeLinkCommand::class,
+            Commands\MakeThemeCommand::class,
+            Commands\InstallCommand::class,
+            Commands\LinkUploadsCommand::class,
         ]);
     }
 }

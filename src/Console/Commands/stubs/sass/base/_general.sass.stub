@@ -1,0 +1,38 @@
+body
+    @apply .font-sans .text-base .leading-tight
+    text-rendering: optimizeLegibility
+    font-smooth: always
+    font-smoothing: antialiased
+
+    max-width: 100%
+    overflow-x: hidden
+
+img
+    max-width: 100%
+    height: auto
+
+a
+    transition: all .3s ease
+    text-decoration: none
+
+
+p
+    @apply .leading-normal .text-grey-dark .mb-4
+
+input:-webkit-autofill
+    box-shadow: 0 0 0 30px white inset
+
+textarea,
+button,
+input
+
+    &:focus,
+    &:active
+        outline: none
+
+h1, h2, h3, h4, h5, h6
+    @apply .text-black .font-extrabold
+
+h1, h2, h3, h4, h5, h6
+    a
+        @apply .text-black
