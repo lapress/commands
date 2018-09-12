@@ -1,0 +1,11 @@
+//.opacity-enter,
+//.opacity-leave-to
+//    opacity: 0
+//
+//.opacity-leave,
+//.opacity-enter-to
+//    opacity: 1
+//
+//.opacity-enter-active,
+//.opacity-leave-active
+//    transition: opacity 10000ms

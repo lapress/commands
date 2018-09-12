@@ -22,6 +22,8 @@ class CommandsServiceProvider extends ServiceProvider
         $this->commands([
             Commands\ThemeLinkCommand::class,
             Commands\MakeThemeCommand::class,
+            Commands\InstallCommand::class,
+            Commands\LinkUploadsCommand::class,
         ]);
     }
 }

@@ -3,6 +3,7 @@
 namespace LaPress\Commands\Console\Commands;
 
 use Illuminate\Console\Command;
+use LaPress\Commands\Services\Theme;
 
 class MakeThemeCommand extends Command
 {
@@ -11,7 +12,7 @@ class MakeThemeCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'lapress:theme:make {name}';
+    protected $signature = 'lapress:make:theme {name}';
 
     /**
      * The console command description.
@@ -19,14 +20,20 @@ class MakeThemeCommand extends Command
      * @var string
      */
     protected $description = 'Create lapress theme';
+    /**
+     * @var Theme
+     */
+    private $theme;
 
     /**
      * Create a new command instance.
      *
-     * @return void
+     * @param Theme $theme
      */
-    public function __construct()
+    public function __construct(Theme $theme)
     {
+        $this->theme = $theme;
+
         parent::__construct();
     }
 
@@ -37,6 +44,18 @@ class MakeThemeCommand extends Command
      */
     public function handle()
     {
-        // create directory structure
+        $name = $this->argument('name');
+
+        $this->theme->create($name, __DIR__.'/stubs');
+        try {
+            $this->theme->link($name);
+        } catch (\Exception $e) {
+
+        }
+        try {
+            $this->theme->linkPublic($name);
+        } catch (\Exception $e) {
+
+        }
     }
 }
