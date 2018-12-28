@@ -42,6 +42,14 @@ if (!function_exists('{theme}_setup')) {
     add_action('after_setup_theme', '{theme}_setup');
 }
 
+if (! function_exists('{theme}_remove_admin_menu_links')) {
+    function {theme}_remove_admin_menu_links()
+    {
+        remove_submenu_page('themes.php', 'themes.php');
+    }
+    add_action('admin_menu', '{theme}_remove_admin_menu_links');
+}
+
 /**
  * Hook into category to update indexes
  */
@@ -56,3 +64,4 @@ if(! function_exists('edit_category_hook') )
     }
     add_action('edited_category', 'edit_category_hook', 10, 2);
 }
+
