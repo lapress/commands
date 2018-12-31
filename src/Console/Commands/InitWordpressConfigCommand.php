@@ -24,6 +24,7 @@ class InitWordpressConfigCommand extends Command
      * @var string
      */
     protected $description = 'Install laPress WordPress config file';
+
     /**
      * @var Filesystem
      */
