@@ -43,7 +43,7 @@ class LinkUploadsCommand extends Command
      */
     public function handle()
     {
-        $uploadsPath = storage_path('app/uploads');
+        $uploadsPath = storage_path('/uploads');
         try {
             $this->files->makeDirectory($uploadsPath);
 

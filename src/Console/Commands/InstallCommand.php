@@ -49,7 +49,7 @@ class InstallCommand extends Command
         }
         \Artisan::call('preset', ['type' => 'lapress']);
         exec('composer update johnpbloch/wordpress-core');
-        \Artisan::call('lapress:uploads:link');
+//        \Artisan::call('lapress:uploads:link');
 
         $this->line('');
         $this->info('----------------------------');
