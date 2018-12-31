@@ -43,12 +43,14 @@ class InstallCommand extends Command
      */
     public function handle()
     {
+        $this->info('                                   ');
         $this->info('  _       ____                     ');
         $this->info(' | | __ _|  _ \ _ __ ___  ___ ___  ');
         $this->info(' | |/ _` | |_) | \'__/ _ \/ __/ __| ');
         $this->info(' | | (_| |  __/| | |  __/\__ \__ \ ');
         $this->info(' |_|\__,_|_|   |_|  \___||___/___/ ');
         $this->info('                                   ');
+
 
         $path = base_path('wordpress');
         if ($this->filesystem->exists($path)) {
@@ -76,7 +78,7 @@ class InstallCommand extends Command
         $this->line('');
         $this->line('Creating new theme');
 
-        $theme = $this->ask('Type theme name');
+        $theme = $this->ask('Type theme name', basename(base_path()));
 
         \Artisan::call('lapress:make:theme', ['name' => $theme]);
         $this->line('Theme "'.$theme.'" generated.');
