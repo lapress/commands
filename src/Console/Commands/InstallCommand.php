@@ -49,8 +49,11 @@ class InstallCommand extends Command
         }
 
         \Artisan::call('preset', ['type' => 'lapress']);
-        exec('composer update johnpbloch/wordpress-core');
-        \Artisan::call('lapress:uploads:link');
+
+        $wordpress = config('wordpress.core');
+        if (!$this->filesystem->exists($wordpress)) {
+            exec('composer update johnpbloch/wordpress-core');
+        }
 
         $this->filesystem->cleanDirectory(
             wordpress_path('wp-content/themes')
