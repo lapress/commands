@@ -57,5 +57,7 @@ class MakeThemeCommand extends Command
         } catch (\Exception $e) {
 
         }
+        $this->line('Theme "'.$name.'" generated.');
+        $this->line('Add "APP_THEME='.$name.'" to your .env file to use it');
     }
 }
