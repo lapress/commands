@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="alternate" type="application/rss+xml" title="" href="{{ url('/feed') }}">
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700,800|Roboto&amp;subset=latin-ext" rel="stylesheet">
-    <link rel="stylesheet" href="{{ mix('/{theme}/dist/css/style.css') }}">
+    <link rel="stylesheet" href="{{ theme_mix('/{theme}/dist/css/style.css') }}">
     <meta property="fb:app_id" content="{{ config('seotools.facebook.app_id') }}" />
     {!! SEO::generate(true) !!}
     @include('{theme}::meta._favicon')
@@ -38,7 +38,7 @@
     <privacy-popup></privacy-popup>
 </div>
 @yield('footer:scripts:before')
-    <script src="{{ mix('/theme/dist/js/app.js') }}"></script>
+    <script src="{{ theme_mix('/theme/dist/js/app.js') }}"></script>
 @yield('footer:scripts:after')
 </body>
 </html>
