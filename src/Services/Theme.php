@@ -62,7 +62,6 @@ class Theme
         }
     }
 
-
     /**
      * @param string $directoryName
      */
@@ -70,7 +69,7 @@ class Theme
     {
         $this->files->link(
             themes($directoryName.'/public'),
-            storage_path('wordpress/wp-content/themes/'.$directoryName)
+            storage_path('content/themes/'.$directoryName)
         );
     }
 
