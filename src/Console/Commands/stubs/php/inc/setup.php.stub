@@ -60,7 +60,7 @@ if(! function_exists('edit_category_hook') )
      */
     function edit_category_hook($termId)
     {
-        \App\Category::whereTermId($termId)->first()->update();
+        \App\Models\Category::whereTermId($termId)->first()->update();
     }
     add_action('edited_category', 'edit_category_hook', 10, 2);
 }

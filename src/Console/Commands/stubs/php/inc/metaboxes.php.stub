@@ -1,6 +1,6 @@
 <?php
 
-use App\Post;
+use App\Models\Post;
 
 // You can replace this requiring each file separately
 /** @var Illuminate\Filesystem\Filesystem $files */
