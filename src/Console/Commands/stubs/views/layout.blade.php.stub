@@ -1,22 +1,22 @@
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
 <head>
-    @include('{theme}::meta._dns')
+    @include('theme::meta._dns')
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="alternate" type="application/rss+xml" title="" href="{{ url('/feed') }}">
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700,800|Roboto&amp;subset=latin-ext" rel="stylesheet">
-    <link rel="stylesheet" href="{{ theme_mix('/{theme}/dist/css/style.css') }}">
+    <link rel="stylesheet" href="{{ theme_mix('/theme/dist/css/style.css') }}">
     <meta property="fb:app_id" content="{{ config('seotools.facebook.app_id') }}" />
     {!! SEO::generate(true) !!}
-    @include('{theme}::meta._favicon')
-    @include('{theme}::meta._google-analytics')
+    @include('theme::meta._favicon')
+    @include('theme::meta._google-analytics')
 </head>
 <body>
 <div id="app">
-    @include('{theme}::partials._header')
+    @include('theme::partials._header')
 
     @yield('content:before')
     <section>
@@ -25,14 +25,14 @@
                 @yield('content')
             </div>
             <div class="w-full base:w-1/4 base:pl-8 pb-20 xs:hidden">
-                @include('{theme}::partials._sidebar')
+                @include('theme::partials._sidebar')
             </div>
 
         </div>
     </section>
 
     @yield('content:after')
-    @include('{theme}::partials._footer')
+    @include('theme::partials._footer')
 
     <portal-target name="modal"></portal-target>
     <privacy-popup></privacy-popup>
