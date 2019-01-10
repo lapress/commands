@@ -32,7 +32,7 @@ class LinkContentCommand extends Command
         try {
             $this->laravel->make('files')->link(
                 $contentPath,
-                storage_path('wordpress/wp-content/uploads')
+                public_path('content')
             );
         } catch (\Exception $e) {
 
