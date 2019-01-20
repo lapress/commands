@@ -65,3 +65,4 @@ if(! function_exists('edit_category_hook') )
     add_action('edited_category', 'edit_category_hook', 10, 2);
 }
 
+add_filter('use_block_editor_for_post', '__return_false');
