@@ -1,0 +1,13 @@
+<article>
+    @if($post->thumbnail)
+        <figure>
+            <a href="">
+                @image(['post' =>  $post, 'size' => 'thumb'])
+
+            </a>
+        </figure>
+    @endif
+
+    <h3>{{ $post->post_title }}</h3>
+    <a href="{{ $post->url }}">More</a>
+</article>

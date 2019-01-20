@@ -47,7 +47,7 @@ class InitWordpressConfigCommand extends Command
         if ($this->filesystem->exists($wordpressSampleConfig)) {
             $this->filesystem->delete($wordpressSampleConfig);
         }
-
+        
         $this->filesystem->copy(
             __DIR__.'/stubs/wp-config.php.stub',
             wordpress_path('wp-config.php')
