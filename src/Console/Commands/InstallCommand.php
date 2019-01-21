@@ -63,10 +63,31 @@ class InstallCommand extends Command
         if (!$this->filesystem->exists($wordpress)) {
             exec('composer update johnpbloch/wordpress-core');
         }
+        // make themes directory
+        $this->filesystem->makeDirectory(
+            storage_path('content/themes')
+        );
+        // make uploads directory
+        $this->filesystem->makeDirectory(
+            storage_path('content/uploads')
+        );
+        // copy plugins directory with its content
+        $this->filesystem->copy(
+            wordpress_path('wp-content/plugins'),
+            storage_path('content/plugins')
+        );
+        // copy languages directory with its content
+        $this->filesystem->copy(
+            wordpress_path('wp-content/languages'),
+            storage_path('content/languages')
+        );
 
         $this->filesystem->cleanDirectory(
-            wordpress_path('wp-content/themes')
+            wordpress_path('wp-content')
         );
+
+        exec('npm install');
+
 
         \Artisan::call('lapress:install:wp-config');
         \Artisan::call('lapress:content:link');

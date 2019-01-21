@@ -86,7 +86,7 @@ class Theme
 
     private function initTailwindCss(string $name)
     {
-        shell_exec('./node_modules/.bin/tailwind init '.themes($name.'/js/tailwind.config.js'));
+        shell_exec('./node_modules/.bin/tailwind init '.themes($name.'/js/config/style.config.js'));
     }
 
     private function createSassFiles(string $name)
