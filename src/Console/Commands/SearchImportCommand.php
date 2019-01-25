@@ -1,11 +1,12 @@
 <?php
-
-namespace App\Console\Commands;
-
 namespace LaPress\Commands\Console\Commands;
 
 use Artisan;
-
+use Illuminate\Console\Command;
+/**
+ * @author    Sebastian Szczepański
+ * @copyright ably
+ */
 class SearchImportCommand extends Command
 {
     /**
