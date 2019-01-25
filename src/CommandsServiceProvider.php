@@ -25,6 +25,7 @@ class CommandsServiceProvider extends ServiceProvider
             Commands\InstallCommand::class,
             Commands\LinkContentCommand::class,
             Commands\InitWordpressConfigCommand::class,
+            Commands\SearchImportCommand::class,
         ]);
     }
 }
