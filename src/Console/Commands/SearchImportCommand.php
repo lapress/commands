@@ -40,6 +40,7 @@ class SearchImportCommand extends Command
      */
     public function handle()
     {
+        Artisan::call('scout:import', ['model' => 'App\\Models\\Post']);
         foreach (config('wordpress.posts.types') as $type => $model) {
             Artisan::call('scout:import', ['model' => $model]);
         }
