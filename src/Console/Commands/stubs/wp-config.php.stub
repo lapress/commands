@@ -30,7 +30,7 @@ define('WP_AUTO_UPDATE_CORE', false);
 define('DISALLOW_FILE_EDIT', true);
 define('WP_DEFAULT_THEME', config('wordpress.theme.active'));
 define('WP_CONTENT_DIR', config('wordpress.content.dir'));
-define('WP_CONTENT_URL', config('wordpress.content.dir'));
+define('WP_CONTENT_URL', config('wordpress.content.url'));
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH.'wp-settings.php');
