@@ -44,5 +44,8 @@ class SearchImportCommand extends Command
         foreach (config('wordpress.posts.types') as $type => $model) {
             Artisan::call('scout:import', ['model' => $model]);
         }
+        foreach (config('wordpress.posts.search.searchable') as $key => $class) {
+            Artisan::call('scout:import', ['model' => $class]);
+        }
     }
 }
