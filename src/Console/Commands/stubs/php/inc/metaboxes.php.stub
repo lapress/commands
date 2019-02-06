@@ -7,14 +7,14 @@ use App\Models\Post;
 $files = app('files')->files(__DIR__.'/metaboxes');
 
 foreach ($files as $file) {
-    require_once __DIR__.'/metaboxes/'.$file->filename;
+    require_once __DIR__.'/metaboxes/'.$file->getRelativePathname();
 }
 
 if (!function_exists('save_metabox_data')) {
     function save_metabox_data($id)
     {
         $post = Post::withoutGlobalScopes()->find($id);
-        $data = app('request')->get($post->post_type);
+        $data = app('request')->get($post->post_type.'_meta');
 
         if (!empty($data)) {
             $post->update();
