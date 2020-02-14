@@ -1,0 +1,39 @@
+<?php
+/** Absolute path to the WordPress directory. */
+if (!defined('ABSPATH')) {
+    define('ABSPATH', dirname(__FILE__).'/');
+}
+
+define('DB_NAME', config('database.connections.mysql.database'));
+define('DB_USER', config('database.connections.mysql.username'));
+define('DB_PASSWORD', config('database.connections.mysql.password'));
+define('DB_HOST', config('database.connections.mysql.host'));
+define('DB_CHARSET', config('database.connections.mysql.charset'));
+define('DB_COLLATE', config('database.connections.mysql.collation'));
+/**
+ * Authentication Unique Keys and Salts.
+ */
+define('AUTH_KEY', config('wordpress.auth.key'));
+define('AUTH_SALT', config('wordpress.auth.salt'));
+define('SECURE_AUTH_KEY', config('wordpress.auth.secure.key'));
+define('SECURE_AUTH_SALT', config('wordpress.auth.secure.salt'));
+define('LOGGED_IN_KEY', config('wordpress.auth.loggedIn.key'));
+define('LOGGED_IN_SALT', config('wordpress.auth.loggedIn.salt'));
+define('NONCE_KEY', config('wordpress.noce.key'));
+define('NONCE_SALT', config('wordpress.noce.salt'));
+
+define('AUTOSAVE_INTERVAL', config('wordpress.autosave_interval', 500) ); // seconds
+define('WP_POST_REVISIONS', config('wordpress.posts.revisions', false) );
+
+/**#@-*/
+$table_prefix = config('database.table_prefix', 'wp_');
+define('WP_DEBUG', config('wordpress.debug'));
+
+define('WP_AUTO_UPDATE_CORE', false);
+define('DISALLOW_FILE_EDIT', true);
+define('WP_DEFAULT_THEME', config('wordpress.theme.active'));
+define('WP_CONTENT_DIR', config('wordpress.content.dir'));
+define('WP_CONTENT_URL', config('wordpress.content.url'));
+
+/** Sets up WordPress vars and included files. */
+require_once(ABSPATH.'wp-settings.php');

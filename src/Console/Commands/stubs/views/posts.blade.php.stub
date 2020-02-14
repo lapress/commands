@@ -1,0 +1,14 @@
+@extends('theme::layout')
+
+@section('content')
+    <section class="pb-20">
+        <header class="p-6 -mt-20 bg-white relative z-10 w-3/4">
+            <h1>{{ $typePlural }}</h1>
+        </header>
+        <div class="p-8">
+            @foreach($posts as $post)
+                @includeFirst(['theme::content.'.$type, 'theme::content.post'], ['post' => $post ])
+            @endforeach
+        </div>
+    </section>
+@stop

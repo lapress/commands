@@ -62,7 +62,6 @@ class Theme
         }
     }
 
-
     /**
      * @param string $directoryName
      */
@@ -70,7 +69,7 @@ class Theme
     {
         $this->files->link(
             themes($directoryName.'/public'),
-            storage_path('wordpress/wp-content/themes/'.$directoryName)
+            storage_path('content/themes/'.$directoryName)
         );
     }
 
@@ -87,7 +86,7 @@ class Theme
 
     private function initTailwindCss(string $name)
     {
-        shell_exec('./node_modules/.bin/tailwind init '.themes($name.'/js/tailwind.config.js'));
+        shell_exec('./node_modules/.bin/tailwind init '.themes($name.'/js/config/style.config.js'));
     }
 
     private function createSassFiles(string $name)

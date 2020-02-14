@@ -1,0 +1,1 @@
+<img src="{{ $post->thumbnail->size->{$size} }}" alt="{{ $post->post_title }}" width="{{ config('wordpress.images.sizes.'.$size.'.width') }}" height="{{ config('wordpress.images.sizes.'.$size.'.height') }}">

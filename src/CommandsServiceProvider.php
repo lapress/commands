@@ -23,7 +23,9 @@ class CommandsServiceProvider extends ServiceProvider
             Commands\ThemeLinkCommand::class,
             Commands\MakeThemeCommand::class,
             Commands\InstallCommand::class,
-            Commands\LinkUploadsCommand::class,
+            Commands\LinkContentCommand::class,
+            Commands\InitWordpressConfigCommand::class,
+            Commands\SearchImportCommand::class,
         ]);
     }
 }
